@@ -2,10 +2,10 @@
 
 return require('packer').startup(function()
     use "rebelot/kanagawa.nvim"
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-    use 'xiyaowong/nvim-transparent' -- enable transparency
+--    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+--    use 'xiyaowong/nvim-transparent' -- enable transparency
     use 'simrat39/symbols-outline.nvim' -- enable symbols tab
-    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- good folding
+--    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- good folding
     use 'wbthomason/packer.nvim' -- Packer package manager
     use "max397574/better-escape.nvim" -- faster jj / kshadowk
     use 'jose-elias-alvarez/null-ls.nvim' -- Use Vale as a prose linter
@@ -21,7 +21,7 @@ return require('packer').startup(function()
     }
     use 'lewis6991/impatient.nvim' -- Makes neovim faster
     use 'tpope/vim-surround' -- Add "", '', (),
-    use { 'phaazon/hop.nvim', branch = 'v2' } -- Navitage to any word in the file
+    use { 'phaazon/hop.nvim', branch = 'v2' } -- Navigate to any word in the file
     use 'onsails/lspkind.nvim' -- shows icons in cmp
     use 'lukas-reineke/headlines.nvim' -- highlights headlines for markdown, other txt files
     use 'j-hui/fidget.nvim' -- sho status of nvim-lsp progress

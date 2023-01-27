@@ -16,7 +16,6 @@ end
 -- Load all OPTs
 map("n", "<F1>", ":luafile ~/.config/nvim/lua/opts.lua<cr>")
 
-
 -- Enable spell checking
 map("n", "<F2>", ":set spell!<cr>")
 -- zg to add word
@@ -24,32 +23,32 @@ map("n", "<F2>", ":set spell!<cr>")
 -- new words  added to ~/.config/nvim/spell/en.utf-8.add
 
 -- Quit buffer
-map("n", "qq", ":q<cr>")
-map("n", "qa", ":qa<cr>")
+-- map("n", "qq", ":q<cr>")
+-- map("n", "qa", ":qa<cr>")
 
-vim.cmd([[
-" " Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-" " Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-]])
+-- vim.cmd([[
+-- " " Copy to clipboard
+-- vnoremap  <leader>y  "+y
+-- nnoremap  <leader>Y  "+yg_
+-- nnoremap  <leader>y  "+y
+-- nnoremap  <leader>yy  "+yy
+-- " " Paste from clipboard
+-- nnoremap <leader>p "+p
+-- nnoremap <leader>P "+P
+-- vnoremap <leader>p "+p
+-- vnoremap <leader>P "+P
+-- ]])
 
 -- Save and exit
-map("n", "<leader>w", ":w<CR>")
-map("n", "<leader>q", ":q<CR>")
-map("n", "<leader>qa", ":qa<CR>")
-
--- Window navigation
-map("n", "<C-j>", "<C-w>j<C-w>")
-map("n", "<C-h>", "<C-w>h<C-w>")
-map("n", "<C-k>", "<C-w>k<C-w>")
-map("n", "<C-l>", "<C-w>l<C-w>")
+-- map("n", "<leader>w", ":w<CR>")
+-- map("n", "<leader>q", ":q<CR>")
+-- map("n", "<leader>qa", ":qa<CR>")
+-- 
+-- -- Window navigation
+-- map("n", "<C-j>", "<C-w>j<C-w>")
+-- map("n", "<C-h>", "<C-w>h<C-w>")
+-- map("n", "<C-k>", "<C-w>k<C-w>")
+-- map("n", "<C-l>", "<C-w>l<C-w>")
 
 -- Hop
 map("n", "HH", ":HopWord<cr>")
@@ -57,10 +56,11 @@ map("n", "HF", ":HopPattern<cr>")
 map("n", "HL", ":HopLineStart<cr>")
 
 -- Telescope
+map("n", "<leader>,", ":lua require('telescope.builtin').git_files()<cr>")
+map("n", "<leader> ", ":lua require('telescope.builtin').buffers()<cr>")
 map("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<cr>")
-map("n", "<leader>fm", ":Telescope media_files<cr>")
+-- map("n", "<leader>fm", ":Telescope media_files<cr>")
 map("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<cr>")
-map("n", "<leader>fb", ":lua require('telescope.builtin').buffers()<cr>")
 map("n", "<leader>fh", ":lua require('telescope.builtin').help_tags()<cr>")
 map("n", "<leader>fd", ":lua require('telescope.builtin').diagnostics()<cr>")
 map("n", "<leader>fs", ":lua require('telescope.builtin').lsp_workspace_symbols()<cr>")
@@ -92,18 +92,24 @@ map("n", "<leader>\\", ":TransparentToggle<CR>")
 -- Toggle colored column at 81
 map('n', '<leader>|', ':execute "set colorcolumn=" . (&colorcolumn == "" ? "81" : "")<CR>')
 
+-- Terminal
+map('t', '<c-l>', '<C-\\><C-n>', {})
+map('n', '<leader>t', ':tabnew<CR>:te<CR>a', {})
+
+-- Tabs
+map('n', '<leader>+', ':tabnext<CR>', {})
+
 -- Navigate buffers
+map('n', '+', ':b#<CR>', {})
 map('n', '<leader>bp', ':bprevious<CR>', {})
 map('n', '<leader>bn', ':bnext<CR>', {})
-map('n', '<leader>bf', ':bfirst<CR>', {})
-map('n', '<leader>bl', ':blast<CR>', {})
+-- map('n', '<leader>bf', ':bfirst<CR>', {})
+-- map('n', '<leader>bl', ':blast<CR>', {})
 map('n', '<leader>bd', ':bdelete<CR>', {})
-
 
 -- Tagbar Toggle
 -- map('n', "<leader>tt", ":TagbarToggle<CR>");
 map('n', "<leader>tt", ":SymbolsOutline<CR>");
-
 
 -- Vimspector
 vim.cmd([[
@@ -135,8 +141,8 @@ nnoremap <silent> gw        <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 ]])
 
 vim.cmd([[
-nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
-nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap <silent> g+ <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> g- <cmd>lua vim.diagnostic.goto_next()<CR>
 ]])
 
 
@@ -166,28 +172,28 @@ nnoremap <silent> <leader>cC :lua require('crates').open_crates_io()<cr>
 
 
 -- Fix common typos
-vim.cmd([[
-    cnoreabbrev W! w!
-    cnoreabbrev W1 w!
-    cnoreabbrev w1 w!
-    cnoreabbrev Q! q!
-    cnoreabbrev Q1 q!
-    cnoreabbrev q1 q!
-    cnoreabbrev Qa! qa!
-    cnoreabbrev Qall! qall!
-    cnoreabbrev Wa wa
-    cnoreabbrev Wq wq
-    cnoreabbrev wQ wq
-    cnoreabbrev WQ wq
-    cnoreabbrev wq1 wq!
-    cnoreabbrev Wq1 wq!
-    cnoreabbrev wQ1 wq!
-    cnoreabbrev WQ1 wq!
-    cnoreabbrev W w
-    cnoreabbrev Q q
-    cnoreabbrev Qa qa
-    cnoreabbrev Qall qall
-]])
+--vim.cmd([[
+--    cnoreabbrev W! w!
+--    cnoreabbrev W1 w!
+--    cnoreabbrev w1 w!
+--    cnoreabbrev Q! q!
+--    cnoreabbrev Q1 q!
+--    cnoreabbrev q1 q!
+--    cnoreabbrev Qa! qa!
+--    cnoreabbrev Qall! qall!
+--    cnoreabbrev Wa wa
+--    cnoreabbrev Wq wq
+--    cnoreabbrev wQ wq
+--    cnoreabbrev WQ wq
+--    cnoreabbrev wq1 wq!
+--    cnoreabbrev Wq1 wq!
+--    cnoreabbrev wQ1 wq!
+--    cnoreabbrev WQ1 wq!
+--    cnoreabbrev W w
+--    cnoreabbrev Q q
+--    cnoreabbrev Qa qa
+--    cnoreabbrev Qall qall
+--]])
 
 -- Comment.nvim configuration
 -- current line

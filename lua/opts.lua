@@ -18,12 +18,12 @@ set spelllang=en_us
 ]])
 
 -- turn off macro reording
-vim.cmd([[
-map q <Nop>
-]])
+-- vim.cmd([[
+-- map q <Nop>
+-- ]])
 
 opt.number = true -- bool: Show line numbers
-opt.relativenumber = true -- bool: Show relative line numbers
+opt.relativenumber = false -- bool: Show relative line numbers
 opt.scrolloff = 4 -- int:  Min num lines of context
 opt.signcolumn = "yes" -- str:  Show the sign column
 opt.numberwidth = 4 -- gutter width

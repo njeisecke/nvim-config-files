@@ -1,10 +1,26 @@
 --[[ init.lua ]]
 
 -- Impatient for faster loading
-require('impatient')
+-- require('impatient')
 
 -- LEADER
-vim.g.mapleader = " " -- works across all nvim files
+vim.g.mapleader = "," -- works across all nvim files
+
+-- IMPORTS
+require('vars') -- Variables
+require('opts') -- Options
+require('keys') -- Keymaps
+require('plug') -- Plugins
+
+-- Lua line
+require('lualine').setup {
+    options = {
+        theme = 'kanagawa',
+        fmt = string.lower,
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+    }
+}
 
 -- Color theme
 require('kanagawa').setup({
@@ -23,21 +39,6 @@ hi GitSignsDelete guibg=#193549 guifg=#ff2600
 hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
 ]])
 
--- IMPORTS
-require('vars') -- Variables
-require('opts') -- Options
-require('keys') -- Keymaps
-require('plug') -- Plugins
-
--- Lua line
-require('lualine').setup {
-    options = {
-        theme = 'kanagawa',
-        fmt = string.lower,
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
-    }
-}
 
 ----------------------------------------
 -- PLUGINS initialization           ----
@@ -91,18 +92,18 @@ require("better_escape").setup {
 
 
 -- FTerm
-require 'FTerm'.setup({
-    border     = 'single',
-    -- cmd = os.getenv('SHELL'),
-    cmd        = 'fish',
-    blend      = 0,
-    dimensions = {
-        height = 0.9,
-        width = 0.9,
-    },
-})
-vim.keymap.set('n', 't', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+-- require 'FTerm'.setup({
+--     border     = 'single',
+--     -- cmd = os.getenv('SHELL'),
+--     cmd        = 'fish',
+--     blend      = 0,
+--     dimensions = {
+--         height = 0.9,
+--         width = 0.9,
+--     },
+-- })
+-- vim.keymap.set('n', 't', '<CMD>lua require("FTerm").toggle()<CR>')
+-- vim.keymap.set('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 
 -- null-ls for Vale, Selene and Markdown linters
@@ -142,10 +143,10 @@ require("null-ls").setup({
 
 
 -- Hop
-require 'hop'.setup {
-    keys = 'etovxqpdygfblzhckisuran',
-    jump_on_sole_occurrence = false,
-}
+-- require 'hop'.setup {
+--     keys = 'etovxqpdygfblzhckisuran',
+--     jump_on_sole_occurrence = false,
+-- }
 
 
 -- Ident Lines
