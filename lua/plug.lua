@@ -38,7 +38,7 @@ return require('packer').startup(function()
     use 'numToStr/Comment.nvim' -- Enable comments
     use 'folke/trouble.nvim' -- Summarizes issues
     use 'folke/todo-comments.nvim' -- Todo comments
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- Make telescope faster
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' } -- Make telescope faster
     use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
     use 'nvim-telescope/telescope-media-files.nvim' -- image files preview in telescope
     use 'numToStr/FTerm.nvim' -- Terminal in Lu-a
