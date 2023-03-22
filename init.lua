@@ -143,10 +143,10 @@ require("null-ls").setup({
 
 
 -- Hop
--- require 'hop'.setup {
---     keys = 'etovxqpdygfblzhckisuran',
---     jump_on_sole_occurrence = false,
--- }
+require 'hop'.setup {
+    keys = 'etovxqpdygfblzhckisuran',
+    jump_on_sole_occurrence = false,
+}
 
 
 -- Ident Lines
@@ -316,7 +316,7 @@ rt.setup({
 
 -- LUA
 -- -------------------------------------
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {
             runtime = {
@@ -465,16 +465,18 @@ cmp.setup.cmdline('/', {
         { name = 'buffer' }
     }
 })
--- `:` cmdline setup.
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    })
-})
 
+-- ab neovim
+-- https://github.com/hrsh7th/nvim-cmp/issues/874#issuecomment-1090099590
+-- `:` cmdline setup.
+-- cmp.setup.cmdline(':', {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = cmp.config.sources({
+--         { name = 'path' }
+--     }, {
+--         { name = 'cmdline' }
+--     })
+-- })
 
 
 ----------------------------------------

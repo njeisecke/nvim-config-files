@@ -43,12 +43,16 @@ map("n", "<F2>", ":set spell!<cr>")
 -- map("n", "<leader>w", ":w<CR>")
 -- map("n", "<leader>q", ":q<CR>")
 -- map("n", "<leader>qa", ":qa<CR>")
--- 
+--
 -- -- Window navigation
 -- map("n", "<C-j>", "<C-w>j<C-w>")
 -- map("n", "<C-h>", "<C-w>h<C-w>")
 -- map("n", "<C-k>", "<C-w>k<C-w>")
 -- map("n", "<C-l>", "<C-w>l<C-w>")
+
+-- reflow a para with Q:
+map("n", "Q", "gqap")
+map("v", "Q", "gq")
 
 -- Hop
 map("n", "HH", ":HopWord<cr>")
