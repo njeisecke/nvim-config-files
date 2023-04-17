@@ -142,6 +142,8 @@ nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gn        <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gs        <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gw        <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> ga        <cmd>lua vim.lsp.buf.code_action()<CR>
+
 ]])
 
 vim.cmd([[
