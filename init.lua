@@ -498,7 +498,7 @@ cmp.setup.cmdline('/', {
 ----------------------------------------
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "bash", "c", "cmake", "css", "dockerfile", "go", "gomod", "gowork", "hcl", "help", "html",
+    ensure_installed = { "bash", "c", "cmake", "css", "dockerfile", "go", "gomod", "gowork", "hcl", "html",
         "http", "javascript", "json", "lua", "make", "markdown", "python", "regex", "rust", "toml", "vim", "yaml",
         "zig" },
     auto_install = true,
