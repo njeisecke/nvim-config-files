@@ -60,6 +60,6 @@ return require('packer').startup(function()
     use 'm-demare/hlargs.nvim' -- Highlight argument definitions and usages
     use 'nvim-lua/plenary.nvim' -- Collection of Lua functions
     use 'williamboman/mason.nvim' -- Manage LSPs and DAPs
-    use 'puremourning/vimspector' -- Debugger
-    use 'mfussenegger/nvim-dap' -- Debugger
+    -- use 'puremourning/vimspector' -- Debugger
+    -- use 'mfussenegger/nvim-dap' -- Debugger
 end)
