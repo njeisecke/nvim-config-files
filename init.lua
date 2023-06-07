@@ -475,18 +475,20 @@ cmp.setup.cmdline('/', {
     }
 })
 
--- ab neovim
--- https://github.com/hrsh7th/nvim-cmp/issues/874#issuecomment-1090099590
--- `:` cmdline setup.
--- cmp.setup.cmdline(':', {
---     mapping = cmp.mapping.preset.cmdline(),
---     sources = cmp.config.sources({
---         { name = 'path' }
---     }, {
---         { name = 'cmdline' }
---     })
--- })
-
+cmp.setup.cmdline(':', {
+    -- mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        {
+            { name = 'path' }
+        },
+        {
+            name = 'cmdline',
+            option = {
+                ignore_cmds = { 'Man', '!' }
+            }
+        }
+    })
+})
 
 ----------------------------------------
 -- TREE-SITTER Setup                ----
