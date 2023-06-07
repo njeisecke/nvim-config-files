@@ -3,7 +3,7 @@
 return require('packer').startup(function()
     use "rebelot/kanagawa.nvim"
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
---    use 'xiyaowong/nvim-transparent' -- enable transparency
+    --    use 'xiyaowong/nvim-transparent' -- enable transparency
     use 'simrat39/symbols-outline.nvim' -- enable symbols tab
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- good folding
     use 'wbthomason/packer.nvim' -- Packer package manager
@@ -38,7 +38,8 @@ return require('packer').startup(function()
     use 'numToStr/Comment.nvim' -- Enable comments
     use 'folke/trouble.nvim' -- Summarizes issues
     use 'folke/todo-comments.nvim' -- Todo comments
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' } -- Make telescope faster
+    use { 'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' } -- Make telescope faster
     use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
     use 'nvim-telescope/telescope-media-files.nvim' -- image files preview in telescope
     use 'numToStr/FTerm.nvim' -- Terminal in Lu-a
