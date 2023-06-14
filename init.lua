@@ -467,27 +467,31 @@ cmp.setup({
     },
 })
 
--- `/` cmdline setup.
-cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = 'buffer' }
-    }
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+        { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+    }, {
+        { name = 'buffer' },
+    })
 })
 
+-- seems broken: https://github.com/hrsh7th/nvim-cmp/issues/1511
+-- also comletion in search is annoying anyway
+--
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline({ '/', '?' }, {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = {
+--         { name = 'buffer' }
+--     }
+-- })
+
 cmp.setup.cmdline(':', {
-    -- mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        {
-            { name = 'path' }
-        },
-        {
-            name = 'cmdline',
-            option = {
-                ignore_cmds = { 'Man', '!' }
-            }
-        }
-    })
+    autocomplete = false,
+    sources = {
+        { name = 'cmdline' }
+    }
 })
 
 ----------------------------------------
