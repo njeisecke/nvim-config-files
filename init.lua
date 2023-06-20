@@ -27,14 +27,15 @@ require('keys') -- Keymaps
 require('plug') -- Plugins
 
 -- Lua line
-require('lualine').setup {
-    options = {
-        theme = 'kanagawa',
-        fmt = string.lower,
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
-    }
-}
+require('lualine').setup()
+-- require('lualine').setup {
+--     options = {
+--         theme = 'kanagawa',
+--         fmt = string.lower,
+--         component_separators = { left = '', right = '' },
+--         section_separators = { left = '', right = '' },
+--     }
+-- }
 
 -- Color theme
 require('kanagawa').setup({
