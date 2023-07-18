@@ -54,6 +54,9 @@ hi GitSignsDelete guibg=#193549 guifg=#ff2600
 hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
 ]])
 
+-- make tabs visible
+vim.cmd("set list")
+vim.cmd("set listchars=tab:>-")
 
 ----------------------------------------
 -- PLUGINS initialization           ----
