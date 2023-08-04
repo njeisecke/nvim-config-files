@@ -64,4 +64,5 @@ return require('packer').startup(function()
     -- use 'puremourning/vimspector' -- Debugger
     -- use 'mfussenegger/nvim-dap' -- Debugger
     use 'tpope/vim-fugitive' -- git
+    use 'brooth/far.vim' -- global search replace
 end)
