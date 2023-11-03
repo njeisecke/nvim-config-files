@@ -65,4 +65,5 @@ return require('packer').startup(function()
     -- use 'mfussenegger/nvim-dap' -- Debugger
     use 'tpope/vim-fugitive' -- git
     use 'brooth/far.vim' -- global search replace
+    use 'kburdett/vim-nuuid' -- insert uuid
 end)
